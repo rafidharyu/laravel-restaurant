@@ -89,22 +89,22 @@
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="{{ route('panel.transaction.show', $item->uuid) }}"
-                                            class="btn btn-sm btn-info">
+                                        <a href="{{ route('panel.transaction.show', $item->uuid) }}" class="btn btn-sm btn-info">
                                             <i class="fas fa-eye"></i>
                                         </a>
 
-                                        <button type="button" class="btn btn-sm btn-primary" onclick="confirmModal(this)"
-                                            data-uuid="{{ $item->uuid }}">
-                                            <i class="fas fa-edit"></i>
-                                        </button>
+                                        @if (auth()->user()->role === 'operator')
+                                            <button type="button" class="btn btn-sm btn-primary" onclick="confirmModal(this)" data-uuid="{{ $item->uuid }}">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
 
-                                        <button class="btn btn-sm btn-danger" onclick="deleteTransaction(this)"
-                                            data-uuid="{{ $item->uuid }}">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
+                                            <button class="btn btn-sm btn-danger" onclick="deleteTransaction(this)" data-uuid="{{ $item->uuid }}">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        @endif
                                     </div>
                                 </td>
+
                             </tr>
                         @empty
                             <tr>
