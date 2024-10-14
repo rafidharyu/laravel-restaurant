@@ -93,15 +93,13 @@
                                             <i class="fas fa-eye"></i>
                                         </a>
 
-                                        @if (auth()->user()->role === 'operator')
-                                            <button type="button" class="btn btn-sm btn-primary" onclick="confirmModal(this)" data-uuid="{{ $item->uuid }}">
-                                                <i class="fas fa-edit"></i>
-                                            </button>
+                                        <button type="button" class="btn btn-sm btn-primary {{ auth()->user()->role !== 'operator' ? 'disabled' : '' }}" onclick="confirmModal(this)" data-uuid="{{ $item->uuid }}">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
 
-                                            <button class="btn btn-sm btn-danger" onclick="deleteTransaction(this)" data-uuid="{{ $item->uuid }}">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </button>
-                                        @endif
+                                        <button class="btn btn-sm btn-danger {{ auth()->user()->role !== 'operator' ? 'disabled' : '' }}" onclick="deleteTransaction(this)" data-uuid="{{ $item->uuid }}">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
                                     </div>
                                 </td>
 

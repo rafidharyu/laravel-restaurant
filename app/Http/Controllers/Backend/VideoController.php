@@ -66,9 +66,11 @@ class VideoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $uuid)
     {
-        return 'detail';
+        return view('backend.video.show', [
+            'video' => $this->videoService->selectFirstBy('uuid', $uuid)
+        ]);
     }
 
     /**

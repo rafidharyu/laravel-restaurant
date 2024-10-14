@@ -105,7 +105,10 @@
                         class="form-control  @error('file') is-invalid @enderror">
 
                     <div>
-                        <img src="{{ asset('storage/' . $video->file) }}" alt="" class="img-fluid mt-3" width="15%">
+                        <video width="320" height="240" controls>
+                            <source src="{{ asset('storage/' . $video->file) }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
 
                     @error('file')
