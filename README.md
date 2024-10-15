@@ -14,6 +14,7 @@ Yummy Restaurant is a restaurant management system built with Laravel 11, using 
 - **Laravel UI**: For setting up authentication scaffolding.
 - **Vite**: A fast and modern build tool used for the dashboard's frontend assets.
 - **Bootstrap Made**: A pre-built Bootstrap template for styling and layout.
+- **Mailtrap**: mailtrap to send booking emails and receive booking status emails.
 - **PHPMyAdmin**: For database management.
 - **MySQL**: The relational database used in this project.
 
